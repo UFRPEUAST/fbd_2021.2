@@ -1,22 +1,4 @@
 venv
 .venv
 *.pyc
-staticfiles
-.env
-*.sqlite3
-.vscode/*
-.idea/
-superensinopro/media/
-*.rdb
-celerybeat-schedule
-superensinopro/local_settings.py
-.env
-superensinopro/local_settings.py
-.coverage
-htmlcov
-imports
-.ipynb_checkpoints/
-env
-
-#--- Windows Cache Aplication 
-latest.dump
+.idea
