@@ -7,6 +7,7 @@ app = Flask(__name__)
 dao_curso = CursoDao()
 
 
+
 @app.route('/curso/', methods=['GET'])
 def get_cursos():
     cursos = dao_curso.get_all()
