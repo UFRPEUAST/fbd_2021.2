@@ -9,6 +9,8 @@ class Disciplia:
         self.nome = nome
         self.grade = grade
 
+
+
     # def __str__(self):
     #     return f'Código: {self.codigo} STATUS: {self.status} CURSO: {self.curso}'
     #
