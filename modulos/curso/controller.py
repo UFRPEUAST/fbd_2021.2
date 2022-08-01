@@ -4,17 +4,18 @@ from modulos.curso.curso import Curso
 from modulos.curso.dao import CursoDao
 
 app_empresa = Blueprint('example_blueprint', __name__)
+app_name = 'curso'
 dao_curso = CursoDao()
 
 
-@app_empresa.route('/curso/', methods=['GET'])
+@app_empresa.route(f'/{app_name}/', methods=['GET'])
 def get_cursos():
     cursos = dao_curso.get_all()
     data = [curso.get_data_dict() for curso in cursos]
     return make_response(jsonify(data))
 
 
-@app_empresa.route('/curso/add/', methods=['POST'])
+@app_empresa.route(f'/{app_name}/add/', methods=['POST'])
 def add_curso():
     data = request.form.to_dict(flat=True)
     curso = dao_curso.is_por_sigla(data.get('sigla'))
@@ -26,3 +27,5 @@ def add_curso():
     return make_response({
         'id': curso.id
     })
+
+#TODO: Criar função para retornar todas as grade do curso.

@@ -61,3 +61,10 @@ class CursoDao:
         if not curso:
             return False
         return True
+
+    #Todo: implementar
+    def get_all_grades(self, id_curso):
+        # dao_semestre = SemestreDao()
+        # semestres = dao_semestre.get_grades_por_curso(id_curso)
+        # return  semestres
+        pass
