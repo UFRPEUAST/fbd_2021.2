@@ -5,8 +5,8 @@ from modulos.curso.curso import Curso
 class CursoDao:
     _TABLE_NAME = 'CURSO'
 
-    _INSERT_INTO = f'INSERT INTO {_TABLE_NAME}(nome, sigla)' \
-                   ' values(%s, %s) RETURNING id'
+    _INSERT_INTO = f'INSERT INTO {_TABLE_NAME}(nome, sigla, status)' \
+                   ' values(%s, %s, %s) RETURNING id'
     _SELECT_ALL = f'SELECT * FROM {_TABLE_NAME}'
     _SELECT_BY_ID = 'SELECT * FROM {} WHERE ID={}'
     _SELECT_BY_SIGLA = "SELECT * FROM {} WHERE SIGLA ILIKE '{}'"
@@ -19,7 +19,7 @@ class CursoDao:
     def salvar(self, curso):
         if curso.id is None:
             cur = self.database.cursor()
-            cur.execute(self._INSERT_INTO, (curso.nome, curso.sigla))
+            cur.execute(self._INSERT_INTO, (curso.nome, curso.sigla, curso.status))
             id = cur.fetchone()[0]
             self.database.commit()
             cur.close()
