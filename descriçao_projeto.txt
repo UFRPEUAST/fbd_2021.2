@@ -1,0 +1,14 @@
+Nome do projeto:
+Dupla:
+
+0 - Validar o projeto com o professor
+1 - Descrição do projeto
+2 - Diagrama ER
+3 - Script de criação das tabelas
+4 - Apresentação dos endpoints:
+4.1:
+   - endpoint: xxxx/xxxx/xxxxx
+   - method: GET|POST
+   - status: 200 |400
+   - retorno: [] |{} - Usado no GET e POST
+   - data: {} - Usando no POST

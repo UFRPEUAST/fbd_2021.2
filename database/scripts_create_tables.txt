@@ -1,0 +1,38 @@
+CREATE TABLE IF NOT EXISTS Curso (
+    id serial PRIMARY key,
+    nome varchar(255),
+    sigla varchar(10),
+    status bool default TRUE);
+
+CREATE TABLE IF NOT EXISTS Grade(
+    id serial PRIMARY key,
+    titulo     varchar(255),
+    carga_horaria float,
+    status bool default TRUE,
+    duracao int default 0,
+    id_curso int REFERENCES Curso(id));
+
+Alter table grade
+    add codigo varchar(10);
+
+
+--Exemplo de innet Join e subquerys
+Select * from grade
+select * from curso
+
+
+
+-- Preciso saber quais são as grades do curso de sigla X (SI)
+select * from curso where sigla ilike 'SI'
+select * from grade where id_curso = 1
+
+-- CURSO GRADE
+
+
+select grade.codigo, curso.nome from grade
+    inner join curso on
+        grade.id_curso=curso.id and
+        curso.sigla ilike 'SI';
+
+
+select g.codigo, c.nome from grade g, curso c where g.id_curso=c.id and c.sigla ilike 'SI';
