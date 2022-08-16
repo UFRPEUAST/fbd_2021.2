@@ -1,7 +1,7 @@
 from datetime import datetime
 
 
-class Disciplia:
+class Disciplina:
     def __init__(self, codigo, nome, total_horas, grade, id=None):
         self.id = id
         self.codigo = codigo
